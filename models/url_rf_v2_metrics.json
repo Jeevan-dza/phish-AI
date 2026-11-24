@@ -1,0 +1,28 @@
+{
+  "model": "RandomForest_v2",
+  "accuracy": 0.9571913929784824,
+  "macro_f1": 0.9571555848479241,
+  "phishing": {
+    "precision": 0.9560588709335369,
+    "recall": 0.9557751017639078,
+    "f1": 0.955916965289116,
+    "true_positives": 22541,
+    "false_negatives_missed": 1043
+  },
+  "legitimate": {
+    "precision": 0.9582599647830959,
+    "recall": 0.958528481646051,
+    "f1": 0.9583942044067322,
+    "true_positives": 23945,
+    "false_positives_blocked": 1036
+  },
+  "false_positive_rate": 0.0442,
+  "false_negative_rate": 0.0415,
+  "confusion_matrix": {
+    "TN_phishing_correct": 22541,
+    "FP_phishing_missed_as_legit": 1043,
+    "FN_legit_blocked_as_phishing": 1036,
+    "TP_legit_correct": 23945
+  },
+  "training_notes": "Trained on PhiUSIIL (phishing + legit homepages) plus synthetic deep legitimate URLs from top-1m.csv. Domain-separated 80/20 split. Features: v2 (22 features). max_depth=20, min_samples_leaf=5 to reduce overfitting."
+}
